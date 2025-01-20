@@ -14,4 +14,8 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/roles', \App\Http\Livewire\Roles::class)->name('roles.index');
+    Route::get('/permissions', \App\Http\Livewire\Permissions::class)->name('permissions.index');
 });
+
