@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Livewire\Auth;
+namespace App\Livewire\Mechanical;
 
-use Livewire\Component;
 use App\Models\Tenant;
-use Illuminate\Validation\Rule;
+use Livewire\Component;
 
 class TenantRegister extends Component
 {
+
     public $name;
     public $email;
     public $address;
@@ -56,8 +56,9 @@ class TenantRegister extends Component
         $this->reset(); // Limpa os campos
     }
 
+
     public function render()
     {
-        return view('livewire.auth.tenant-register');
+        return view('livewire.mechanical.tenant-register');
     }
 }
