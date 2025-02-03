@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('mechanical.home-page');
-});
+})->name('home');
 
 Route::get('/dashboard', function () {
     return view('mechanical.dashboard');
