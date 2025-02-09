@@ -12,7 +12,8 @@
                class="bg-white text-indigo-600 hover:bg-indigo-600 hover:text-white py-3 px-6 rounded-full text-lg font-semibold transition duration-300 ease-in-out">
                 Login
             </a>
-
+            <a x-on:click="$dispatch('open-side-modal', { componentName: '', params: {}, events:[] })" class="w-full md:w-20 text-center cursor-pointer block px-2 py-1 text-xs bg-blue-black text-white rounded hover:bg-opacity-50 font-bold">Abrir modal</a>
+            <a x-on:click="$dispatch('open-side-modal2', { componentName: '', params: {}, events:[] })" class="w-full md:w-20 text-center cursor-pointer block px-2 py-1 text-xs bg-blue-black text-white rounded hover:bg-opacity-50 font-bold">Abrir modal2</a>
             <!-- Botão de Registro -->
             <a href="{{ route('register') }}"
                class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-indigo-600 py-3 px-6 rounded-full text-lg font-semibold transition duration-300 ease-in-out">
