@@ -8,12 +8,15 @@
     "require": {
         "php": "^8.2",
         "laravel/framework": "^11.31",
+        "laravel/socialite": "^5.17",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.5",
+        "owen-it/laravel-auditing": "^13.6",
         "spatie/laravel-permission": "^6.10",
         "stancl/tenancy": "^3.8"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.14",
         "fakerphp/faker": "^1.23",
         "laravel/breeze": "^2.3",
         "laravel/pail": "^1.1",
