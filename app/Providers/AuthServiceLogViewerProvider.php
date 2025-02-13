@@ -21,9 +21,8 @@ class AuthServiceLogViewerProvider extends ServiceProvider
     public function boot(): void
     {
         $this->registerPolicies();
-
-        Gate::define('viewLogViewer', function (?User $user) {
-            return $user && ($user->email == 'edsonteles343@gmail.com');
-        });
+//        Gate::define('viewLogViewer', function (?User $user) {
+//            return $user && ($user->email == 'edsonteles343@gmail.com');
+//        });
     }
 }
