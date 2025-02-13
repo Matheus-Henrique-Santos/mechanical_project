@@ -20,18 +20,18 @@
             <div class="flex flex-col gap-4">
                 <div class="text-black flex flex-col gap-0.5">
                     <p class="text-gray-700 text-[15px] font-medium">Seu e-mail</p>
-                    <input type="email" name="email" placeholder="Digite o seu email" wire:model.defer="formData.email"
+                    <input type="email" name="email" placeholder="Digite o seu email" wire:model.defer="email"
                            class="border border-gray-300 outline-none p-2 pl-3 rounded focus:border-[#0084ff] invalid:border-red-500">
-                    @error('formData.email')
+                    @error('email')
                     <span class="text-red-500 text-[13px]">{{ $message }}</span>
                     @enderror
                 </div>
                 <div class="text-black flex flex-col gap-0.5">
                     <p class="text-gray-700 text-[15px] font-medium">Senha</p>
                     <input type="password" name="password" placeholder="Digite a sua senha"
-                           wire:model.defer="formData.password"
+                           wire:model.defer="password"
                            class="border border-gray-300 outline-none p-2 pl-3 rounded focus:border-[#0084ff] invalid:border-red-500">
-                    @error('formData.password')
+                    @error('password')
                     <span class="text-red-500 text-[13px]">{{ $message }}</span>
                     @enderror
                 </div>
@@ -41,7 +41,7 @@
                     <label for="remember"
                            class="flex flex-row items-center gap-2 cursor-pointer text-[14px] text-gray-700 font-medium">
                         <input type="checkbox" name="remember" id="remember" class="cursor-pointer"
-                               wire:model="formData.remember">
+                               wire:model="remember">
                         Manter conectado
                     </label>
                 </div>

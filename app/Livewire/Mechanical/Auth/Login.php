@@ -21,13 +21,13 @@ class Login extends Component
             'email' => 'required',
             'password' => 'required',
         ], [
-            'required' => 'O campo :attribute é Obrigatório.',
+            'required' => 'O campo :attribute é obrigatório.',
         ], [
             'email' => 'E-mail',
             'password' => 'Senha',
         ]);
 
-        $remember = (bool)$this->formData['remember'];
+        $remember = (bool)$this->remember;
 
         $user = User::where('email', $validatedData['email'])->first();
 
