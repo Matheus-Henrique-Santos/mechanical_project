@@ -12,6 +12,9 @@ Route::get('/dashboard', function () {
     return view('mechanical.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::view('login', 'mechanical.auth.login')->name('login');
+Route::view('register', 'mechanical.auth.register')->name('register');
+
 Route::middleware('web')->get('/google', [AuthProvidersController::class, 'googleAuth'])->name('google');
 Route::middleware('web')->get('/google/callback', [AuthProvidersController::class, 'googleCallback']);
 
@@ -26,4 +29,4 @@ Route::domain('{account}.'.env('APP_URL'))->middleware([\App\Http\Middleware\Sub
     Route::view('/tenant-register', 'mechanical.auth.tenant-register')->name('tenant.register');
 });
 
-require __DIR__.'/auth.php';
+// require __DIR__.'/auth.php';
