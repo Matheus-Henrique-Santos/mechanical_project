@@ -20,7 +20,8 @@
                         </span>
                     </div>
                     <div class="p-8">
-                        @if($show)
+
+                    @if($show)
                             @livewire($component, $params)
                         @endif
                     </div>

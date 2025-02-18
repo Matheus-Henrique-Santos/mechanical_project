@@ -11,7 +11,7 @@ class ModalHelp extends Component
     public $component = '';
     public $params = [];
 
-    protected $listeners = ['showModal' => 'open', 'closeModal' => 'close'];
+    protected $listeners = ['showModalHelp' => 'open', 'closeModal' => 'close'];
 
     public function open($component, $params = [])
     {

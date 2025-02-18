@@ -10,7 +10,7 @@ class ModalNivel3 extends Component
     public $component = '';
     public $params = [];
 
-    protected $listeners = ['showModal' => 'open', 'closeModal' => 'close'];
+    protected $listeners = ['showModal3' => 'open', 'closeModal' => 'close'];
 
     public function open($component, $params = [])
     {

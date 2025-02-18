@@ -12,7 +12,7 @@ class ModalCenter extends Component
     public $form = null;
     public $site = null;
 
-    protected $listeners = ['showModal' => 'open', 'closeModal' => 'close'];
+    protected $listeners = ['showModalCenter' => 'open', 'closeModal' => 'close'];
 
     public function open($component, $params = [], $form = null, $site = null)
     {

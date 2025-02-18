@@ -13,8 +13,8 @@ class UserController
     public function index($userFilters = null, $userOrder = null, $pageSize = null)
     {
         try {
-            $userDB = User::query()
-                ->join('model_has_roles', 'model_has_roles.model_id', 'users.id');
+//            $userDB = User::query() ->join('model_has_roles', 'model_has_roles.model_id', 'users.id');
+            $userDB = User::query();
 
             if(isset($userOrder['column'])) {
                 $userDB->orderBy($userOrder['column'], $userOrder['order']);

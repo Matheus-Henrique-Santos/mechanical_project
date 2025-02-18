@@ -26,15 +26,15 @@ class Form extends Component
 
     public function mount($id = null)
     {
-        if ($id) {
-            $this->user_id = $id;
-            $this->getUser();
-        }
+//        if ($id) {
+//            $this->user_id = $id;
+//            $this->getUser();
+//        }
     }
 
     public function getUser()
     {
-        $this->state['tenant_id'] = auth()->user()->tenant_id;
+//        $this->state['tenant_id'] = auth()->user()->tenant_id;
 
         if ($this->user_id) {
             $userRepository = new UserController;

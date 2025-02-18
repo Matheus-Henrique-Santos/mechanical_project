@@ -24,7 +24,7 @@ class ModalConfirm extends Component
     public $isSafari = false;
     public $proposalUrl = null;
 
-    protected $listeners = ['showModal' => 'open', 'closeModal' => 'close'];
+    protected $listeners = ['showModalConfirm' => 'open', 'closeModal' => 'close'];
 
     public function open(
         string $title,
