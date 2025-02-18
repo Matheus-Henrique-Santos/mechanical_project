@@ -88,42 +88,11 @@
 {{--                    </div>--}}
 {{--                </div>--}}
 
-{{--                <div class="flex flex-row gap-4">--}}
-{{--                    <div class="text-black flex flex-col gap-0.5 w-full">--}}
-{{--                        <p class="text-gray-700 text-[14px] font-medium">Endereço</p>--}}
-{{--                        <input type="text" name="address" placeholder="Endereço"--}}
-{{--                               wire:model="formData.address"--}}
-{{--                               class="border border-gray-300 outline-none p-2 pl-3 rounded focus:border-[#0084ff]">--}}
-{{--                        @error('formData.address')--}}
-{{--                        <span class="text-red-500 text-[12px]">{{ $message }}</span>--}}
-{{--                        @enderror--}}
-{{--                    </div>--}}
-{{--                    <div class="text-black flex flex-col gap-0.5 w-full">--}}
-{{--                        <p class="text-gray-700 text-[14px] font-medium">Bairro</p>--}}
-{{--                        <input type="text" name="neighborhood" placeholder="Bairro"--}}
-{{--                               wire:model="formData.neighborhood"--}}
-{{--                               class="border border-gray-300 outline-none p-2 pl-3 rounded focus:border-[#0084ff]" maxlength="40">--}}
-{{--                        @error('formData.neighborhood')--}}
-{{--                        <span class="text-red-500 text-[12px]">{{ $message }}</span>--}}
-{{--                        @enderror--}}
-{{--                    </div>--}}
-{{--                    <div class="text-black flex flex-col gap-0.5 w-[100px]">--}}
-{{--                        <p class="text-gray-700 text-[14px] font-medium">Número</p>--}}
-{{--                        <input type="number" name="number" placeholder="Número" wire:model="formData.number"--}}
-{{--                               class="border border-gray-300 outline-none p-2 pl-3 rounded focus:border-[#0084ff]" min="0">--}}
-{{--                        @error('formData.number')--}}
-{{--                        <span class="text-red-500 text-[12px]">{{ $message }}</span>--}}
-{{--                        @enderror--}}
-{{--                    </div>--}}
-{{--                    <div class="text-black flex flex-col gap-0.5 w-full">--}}
-{{--                        <p class="text-gray-700 text-[14px] font-medium">Complemento</p>--}}
-{{--                        <input type="text" name="complement" placeholder="Complemento" wire:model="formData.complement"--}}
-{{--                               class="border border-gray-300  outline-none p-2 pl-3 rounded focus:border-[#0084ff]" maxlength="50">--}}
-{{--                        @error('formData.complement')--}}
-{{--                        <span class="text-red-500 text-[12px]">{{ $message }}</span>--}}
-{{--                        @enderror--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+        <div class="flex flex-col justify-center mt-3 mb-3">
+            <h1 class="text-2xl font-bold text-black">
+                Dados do integrador
+            </h1>
+        </div>
 
 {{--                <div class="flex flex-row gap-4">--}}
 {{--                    <div class="text-black flex flex-col gap-0.5 w-full">--}}
