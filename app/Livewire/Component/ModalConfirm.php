@@ -8,26 +8,39 @@ use Livewire\Component;
 class ModalConfirm extends Component
 {
     use WithModal;
+
     public $show = false;
 
-    public $icon;
-    public $title;
-    public $message;
+    public $icon = 'add';
+    public $title = '';
+    public $message = '';
     public $confirmButtonText = 'Sim';
     public $cancelButtonText = 'Não';
-    public $eventName;
-    public $colorButton;
-    public $eventParam;
-    public $withoutQuantity;
+    public $eventName = '';
+    public $colorButton = 'red';
+    public $eventParam = [];
+    public $withoutQuantity = null;
     public $closeModal = true;
     public $isSafari = false;
-    public $proposalUrl = false;
+    public $proposalUrl = null;
 
     protected $listeners = ['showModal' => 'open', 'closeModal' => 'close'];
-    public function open($icon,  $title, $message, $eventName, $eventParam, $confirmButtonText = 'Sim', $cancelButtonText = 'Não', $withoutQuantity, $closeModal, $isSafari, $proposalUrl, $colorButton)
-    {
+
+    public function open(
+        string $title,
+        string $message,
+        string $eventName,
+        array $eventParam = [],
+        string $icon = 'add',
+        string $confirmButtonText = 'Sim',
+        string $cancelButtonText = 'Não',
+        bool $withoutQuantity = null,
+        bool $closeModal = true,
+        bool $isSafari = false,
+        ?string $proposalUrl = null,
+        string $colorButton = 'red'
+    ) {
         $this->show = true;
-        $this->closeModal = $closeModal;
         $this->icon = $icon;
         $this->title = $title;
         $this->message = $message;
@@ -36,19 +49,16 @@ class ModalConfirm extends Component
         $this->eventName = $eventName;
         $this->eventParam = json_encode($eventParam);
         $this->withoutQuantity = $withoutQuantity;
+        $this->closeModal = $closeModal;
         $this->isSafari = $isSafari;
-        $this->colorButton = $colorButton;
         $this->proposalUrl = $proposalUrl;
+        $this->colorButton = $colorButton;
     }
 
-    public function close($close = null)
+    public function close()
     {
-        if ($close) {
-            $this->closeModal(2);
-        }
         $this->show = false;
-
-        $this->reset();
+        $this->resetExcept(['icon', 'colorButton']);
     }
 
     public function render()

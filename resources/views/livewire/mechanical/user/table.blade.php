@@ -46,11 +46,11 @@
                             color="primary"
                             wire:click="openModal('vendor.user.form',{'id': {{ $itemUser['id'] }} })" />
 
-                        <x-button.actions
-                            color="danger"
-                            wire:click="openConfirmModal('warning', 'Excluir', 'Você deseja realmente excluir esse registro?', 'confirmDeleteUser', {{ $itemUser['id'] }}, 'Excluir', 'Cancelar')"
-                            icon="delete"
-                            label="Deletar"/>
+{{--                        <x-button.actions--}}
+{{--                            color="danger"--}}
+{{--                            wire:click="openConfirmModal('warning', 'Excluir', 'Você deseja realmente excluir esse registro?', 'confirmDeleteUser', {{ $itemUser['id'] }}, 'Excluir', 'Cancelar')"--}}
+{{--                            icon="delete"--}}
+{{--                            label="Deletar"/>--}}
                     </div>
                 </td>
             </tr>

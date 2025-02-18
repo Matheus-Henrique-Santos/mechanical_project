@@ -42,15 +42,19 @@
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BSMP3K"
                   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-@livewire('sideModal')
-@livewire('sideModal2')
 
-@livewire('component.modal-nivel1')
-@livewire('component.modal-nivel2')
-@livewire('component.modal-nivel3')
-@livewire('component.modal-nivel4')
-@livewire('component.modal-confirm')
-@livewire('component.modal-center')
+    @livewire('sideModal')
+    @livewire('sideModal2')
+
+    @yield('modal')
+    @livewire('component.modal-nivel1')
+    @livewire('component.modal-nivel2')
+    @livewire('component.modal-nivel3')
+    @livewire('component.modal-nivel4')
+    @livewire('component.modal-center')
+    <script>
+        Livewire.onPageExpired((response, message) => console.log('off'))
+    </script>
 
 @if(Auth::check() && !request()->is('/'))
     <div class="w-full h-full flex flex-row border ">
@@ -69,7 +73,18 @@
     </div>
 @endif
 
+@yield('modal')
+
 @livewireScripts
+@livewire('component.modal-help')
+@livewire('component.modal-nivel1')
+@livewire('component.modal-nivel2')
+@livewire('component.modal-nivel3')
+@livewire('component.modal-nivel4')
+@livewire('component.modal-center')
+<script>
+    Livewire.onPageExpired((response, message) => console.log('off'))
+</script>
 @stack('scripts')
 
 <script>
