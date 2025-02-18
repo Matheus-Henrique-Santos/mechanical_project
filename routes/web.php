@@ -1,15 +1,15 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\Auth\AuthProvidersController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthProviderController;
 
 Route::get('/', function () {
     return view('mechanical.home-page');
 })->name('home');
 
-Route::middleware('web')->get('/google', [AuthProvidersController::class, 'googleAuth'])->name('google');
-Route::middleware('web')->get('/google/callback', [AuthProvidersController::class, 'googleCallback']);
+Route::middleware('web')->get('/google', [AuthProviderController::class, 'googleAuth'])->name('google');
+Route::middleware('web')->get('/google/callback', [AuthProviderController::class, 'googleCallback']);
 
 Route::view('login', 'mechanical.auth.login')->name('login')->middleware('guest');
 Route::view('register', 'mechanical.auth.register')->name('register')->middleware('guest');

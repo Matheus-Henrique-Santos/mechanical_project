@@ -125,9 +125,7 @@
                     </ul>
                 </li>
                 <li>
-{{--                    <a href="{{ route('logout', ['account' => auth()->user()->tenant->id]) }}"--}}
-                    <a
-                       class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <a class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 cursor-pointer" wire:click="logout">
                         <svg
                             class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
