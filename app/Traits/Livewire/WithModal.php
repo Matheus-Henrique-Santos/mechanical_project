@@ -4,7 +4,7 @@ namespace App\Traits\Livewire;
 
 trait WithModal
 {
-    public function openModal($component, $params = [], $level = 1)
+    public function openModal($component, $event, $params = [], $level = 1)
     {
         $modal = match ($level) {
             2 => 'component.modal-nivel2',
@@ -13,7 +13,7 @@ trait WithModal
             default => 'component.modal-nivel1',
         };
 
-        $this->dispatch('showModal', component: $modal, params: [$component, $params]);
+        $this->dispatch($event, component: $modal, params: [$component, $params]);
     }
 
     public function openCenterModal($component, $params = [], $form = null, $site = null)

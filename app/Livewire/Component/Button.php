@@ -13,12 +13,14 @@ class Button extends Component
     public $icon;
     public $component;
     public $level = 1;
+    public $event;
 
-    public function mount($text, $icon = null, $component, $level = 1)
+    public function mount($text, $event, $icon = null, $component, $level = 1)
     {
         $this->text = $text;
         $this->icon = $icon;
         $this->component = $component;
+        $this->event = $event;
         $this->level = $level;
     }
 

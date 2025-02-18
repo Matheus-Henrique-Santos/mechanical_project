@@ -60,7 +60,7 @@
     <div class="flex flex-col lg:flex-row gap-y-5 justify-between mt-4">
         <div class="flex items-end gap-x-2 text-xs w-full">
             <p>Mostrando</p>
-            <x-table.select wire:model="pageSize" />
+{{--            <x-table.select wire:model="pageSize" />--}}
             <p class="w-full"> itens de {{ $response->users->total() }}</p>
         </div>
         <div>
