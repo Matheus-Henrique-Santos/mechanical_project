@@ -9,26 +9,15 @@ class AlterUsersAddTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            if (Schema::hasColumn('users', 'tenant_id')) {
-                $table->dropColumn('tenant_id');
-            }
-
-            $table->string('tenant_id', 255)->nullable();
-
-            $table->foreign('tenant_id')
-                ->references('id')
-                ->on('tenants')
-                ->onDelete('set null');
+            $table->foreignId('tenant_id')->nullable()->constrained('tenants');
         });
     }
 
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            if (Schema::hasColumn('users', 'tenant_id')) {
-                $table->dropForeign(['tenant_id']);
-                $table->dropColumn('tenant_id');
-            }
+            $table->dropForeign(['tenant_id']);
+            $table->dropColumn('tenant_id');
         });
     }
 }

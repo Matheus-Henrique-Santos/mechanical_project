@@ -2,14 +2,22 @@
 
 namespace App\Livewire\Mechanical\Auth;
 
+use App\Models\Tenant;
 use App\Models\User;
+use App\Notifications\SendEmailNewUsers;
 use App\Services\AddressService;
+use Illuminate\Auth\Passwords\PasswordBroker;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Str;
 use Livewire\Component;
 
 class Register extends Component
 {
-    public $formData = [];
-    public $zipCode;
+    public $name, $subdomain, $email, $cellphone, $cnpj;
+
     public function updatedZipCode()
     {
         $address = AddressService::getAddress($this->zipCode);
@@ -26,46 +34,59 @@ class Register extends Component
 
     public function save()
     {
-        $validatedData = $this->validate([
-            'formData.socialName' => 'required',
-            'formData.fantasyName' => 'required',
-            'formData.cnpj' => 'required',
-            'formData.cellphone' => 'required',
-            'zipCode' => 'required',
-            'formData.city' => 'required',
-            'formData.uf' => 'required',
-            'formData.address' => 'required',
-            'formData.neighborhood' => 'required',
-            'formData.number' => 'required',
-            'formData.complement' => 'required',
-            'formData.name' => 'required',
-            'formData.cpf' => 'required',
-            'formData.email' => 'required',
-            'formData.password' => 'required',
-            'formData.password_confirmed' => 'required',
+        $this->validate([
+            'name' => 'required|min:3',
+            'subdomain' => 'required|unique:tenants,subdomain',
+            'email' => 'required|email|unique:users,email',
+            'cellphone' => 'required|celular_com_ddd',
+            'cnpj' => 'required|cnpj|unique:tenants,cnpj',
         ], [
             'required' => ':attribute é obrigatório.',
+            'unique' => ':attribute já existe cadastro.',
+            'min' => ':attribute precisa ter no minimo :min caracteres.',
         ], [
-            'formData.name' => 'Nome',
-            'formData.cpf' => 'CPF',
-            'formData.cnpj' => 'CNPJ',
-            'formData.cellphone' => 'Celular',
-            'formData.email' => 'E-mail',
-            'formData.password' => 'Senha',
-            'formData.socialName' => 'Razão Social',
-            'formData.fantasyName' => 'Nome Fantasia',
-            'zipCode' => 'CEP',
-            'formData.city' => 'Cidade',
-            'formData.uf' => 'UF',
-            'formData.address' => 'Endereço',
-            'formData.neighborhood' => 'Bairro',
-            'formData.number' => 'Número',
-            'formData.complement' => 'Complemento',
-            'formData.password_confirmed' => 'Confirmação de senha',
+            'name' => 'Nome do responsavel',
+            'subdomain' => 'Nome da plataforma',
+            'email' => 'E-mail',
+            'cellphone' => 'Celular',
+            'cnpj' => 'CNPJ',
         ]);
+
+        $user = User::query()->where('email', $this->email)->first();
+
+        DB::beginTransaction();
+
+        if (!$user) {
+            $newUser = User::query()->create([
+                'name' => $this->name,
+                'email' => $this->email,
+                'password' => Hash::make(Str::random(16)),
+            ]);
+
+            Tenant::query()->create([
+                'main_user_id' => $newUser->id,
+                'subdomain' => $this->subdomain,
+                'cellphone' => $this->cellphone,
+                'cnpj' => $this->cnpj,
+            ]);
+
+            $token = app(PasswordBroker::class)->createToken($newUser);
+            Notification::route('mail', [
+                $newUser->email => $newUser->name,
+            ])->notify(new SendEmailNewUsers($newUser, $token));
+
+            DB::commit();
+
+            session()->flash('success', 'Cadastro realizado com sucesso. Você receberá um email em sua caixa de entrada');
+            return $this->redirect(route('login'));
+        }
+
+        DB::rollBack();
+        return $this->addError('email', 'Já existe uma conta com este e-mail.');
     }
 
-    public function render()
+    public
+    function render()
     {
         return view('livewire.mechanical.auth.register');
     }

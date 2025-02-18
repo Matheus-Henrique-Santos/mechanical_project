@@ -13,6 +13,9 @@
                         <span class="text-red-500 text-[15px] font-medium">{{ $errors->first('error') }}</span>
                     </div>
                 @endif
+                @if (session('success'))
+                    <span class="text-green-700 text-[13px] mt-2"> {{ session('success') }}</span>
+                @endif
             </div>
         </div>
         <form method="POST" wire:submit.prevent="login" class="flex flex-col gap-2">
@@ -46,7 +49,7 @@
                     </label>
                 </div>
                 <div>
-                    <a href="#" class="font-medium text-[#0084ff] text-[15px] hover:underline">Esqueceu a senha ?</a>
+                    <a href="{{ route('forgot-password') }}" class="font-medium text-[#0084ff] text-[15px] hover:underline">Esqueceu a senha ?</a>
                 </div>
             </div>
 

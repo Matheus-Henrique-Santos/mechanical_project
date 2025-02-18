@@ -304,6 +304,7 @@
     -moz-appearance: none;
     appearance: none;
     border-radius: 0.75rem;
+    border: 1px solid rgba(128, 128, 128, 0.351);
     --tw-bg-opacity: 1;
     background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
     padding-top: 0.5rem;

@@ -46,7 +46,7 @@
     @livewire('sideModal')
     @livewire('sideModal2')
 
-@if(Auth::check() && !request()->is('/'))
+@if(Auth::check() && !request()->is('/', 'login', 'register'))
     <div class="w-full h-full flex flex-row border ">
         <x-navbar-auth>
             <main>

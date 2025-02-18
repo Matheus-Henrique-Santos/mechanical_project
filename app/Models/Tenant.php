@@ -6,8 +6,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Stancl\Tenancy\Database\Concerns\HasDatabase;
 use Stancl\Tenancy\Database\Concerns\HasDomains;
-use Stancl\Tenancy\Database\Models\Domain;
-use Stancl\Tenancy\Database\Models\Tenant as BaseTenant;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Auth\Authenticatable as AuthenticatableTrait;
 
@@ -20,15 +18,18 @@ class Tenant extends Model implements Authenticatable
 
     protected $fillable = [
         'id',
-        'name',
-        'email',
-        'user_principal',
-        'user_principal',
+        'main_user_id',
         'subdomain',
         'name',
-        'address',
-        'type',
-        'document',
-        'phone'
+        'cellphone',
+        'cnpj',
+        'logo_path',
+        'zip_code',
+        'street',
+        'neighborhood',
+        'city',
+        'uf',
+        'number',
+        'complement',
     ];
 }
