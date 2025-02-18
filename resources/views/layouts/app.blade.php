@@ -18,7 +18,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.css"/>
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.js"></script>
 
     <style>
@@ -35,13 +34,6 @@
     @livewireStyles
 </head>
 <body class="font-sans antialiased">
-
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ND2J82J"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BSMP3K"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     @livewire('sideModal')
     @livewire('sideModal2')
@@ -66,12 +58,12 @@
 @yield('modal')
 
 @livewireScripts
-@livewire('component.modal-help')
+{{--@livewire('component.modal-help')--}}
 @livewire('component.modal-nivel1')
-@livewire('component.modal-nivel2')
-@livewire('component.modal-nivel3')
-@livewire('component.modal-nivel4')
-@livewire('component.modal-center')
+{{--@livewire('component.modal-nivel2')--}}
+{{--@livewire('component.modal-nivel3')--}}
+{{--@livewire('component.modal-nivel4')--}}
+{{--@livewire('component.modal-center')--}}
 <script>
     Livewire.onPageExpired((response, message) => console.log('off'))
 </script>
