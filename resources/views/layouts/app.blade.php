@@ -46,16 +46,6 @@
     @livewire('sideModal')
     @livewire('sideModal2')
 
-    @yield('modal')
-    @livewire('component.modal-nivel1')
-    @livewire('component.modal-nivel2')
-    @livewire('component.modal-nivel3')
-    @livewire('component.modal-nivel4')
-    @livewire('component.modal-center')
-    <script>
-        Livewire.onPageExpired((response, message) => console.log('off'))
-    </script>
-
 @if(Auth::check() && !request()->is('/'))
     <div class="w-full h-full flex flex-row border ">
         <x-navbar-auth>

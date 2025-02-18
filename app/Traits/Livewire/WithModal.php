@@ -4,7 +4,7 @@ namespace App\Traits\Livewire;
 
 trait WithModal
 {
-    public function openModal($component, $event, $params = [], $level = 1)
+    public function openModal($component, $params = [], $level = 1)
     {
         $modal = match ($level) {
             2 => 'component.modal-nivel2',
@@ -13,12 +13,19 @@ trait WithModal
             default => 'component.modal-nivel1',
         };
 
-        $this->dispatch($event, component: $modal, params: [$component, $params]);
+        $level = match ($level) {
+            2 => 2,
+            3 => 3,
+            4 => 4,
+            default => 1,
+        };
+
+        $this->dispatch('showModal'.$level, component: $modal, params: [$component, $params]);
     }
 
     public function openCenterModal($component, $params = [], $form = null, $site = null)
     {
-        $this->dispatch('showModal', component: 'component.modal-center', params: [$component, $params, $form, $site]);
+        $this->dispatch('showModalCenter', component: 'component.modal-center', params: [$component, $params, $form, $site]);
     }
 
     public function closeCenterModal()
@@ -40,7 +47,7 @@ trait WithModal
         $proposalUrl = null,
         $colorButton = 'red'
     ) {
-        $this->dispatch('showModal', component: 'component.modal-confirm', params: [
+        $this->dispatch('showModalConfirm', component: 'component.modal-confirm', params: [
             $icon, $title, $message, $eventName, $eventParam, $confirmButtonText,
             $cancelButtonText, $withoutQuantity, $closeModal, $isSafari, $proposalUrl, $colorButton
         ]);
@@ -48,7 +55,7 @@ trait WithModal
 
     public function openHelpModal($component, $params = [])
     {
-        $this->dispatch('showModal', component: 'component.modal-help', params: [$component, $params]);
+        $this->dispatch('showModalHelp', component: 'component.modal-help', params: [$component, $params]);
     }
 
     public function closeHelpModal()
@@ -70,6 +77,13 @@ trait WithModal
             default => 'component.modal-nivel1',
         };
 
-        $this->dispatch('closeModal', component: $modal);
+        $level = match ($level) {
+            2 => 2,
+            3 => 3,
+            4 => 4,
+            default => 1,
+        };
+
+        $this->dispatch('closeModal'.$level, component: $modal);
     }
 }

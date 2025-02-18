@@ -10,7 +10,7 @@ class ModalNivel2 extends Component
     public $component = '';
     public $params = [];
 
-    protected $listeners = ['showModal2' => 'open', 'closeModal' => 'close'];
+    protected $listeners = ['showModal2' => 'open', 'closeModal2' => 'close'];
 
     public function open($component, $params = [])
     {

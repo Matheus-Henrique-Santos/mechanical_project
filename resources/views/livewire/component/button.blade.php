@@ -1,5 +1,5 @@
 <div>
-    <button wire:click.prevent='openModal("{{$component}}", "{{ $event }}", {"id": null}, {{$level}})'>
+    <button wire:click.prevent='openModal("{{$component}}", {"id": null}, {{$level}})'>
         <span>
             {{$text}}
         </span>
