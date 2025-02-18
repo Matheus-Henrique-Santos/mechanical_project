@@ -7,19 +7,50 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!-- Inclua jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet"/>
     <!-- Em resources/views/layouts/app.blade.php, adicione no head -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.css"/>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.js"></script>
+
+    <style>
+        [x-cloak] { display: none !important; }
+
+        :root{
+            --user-primary-color: hsl(<?php echo e(session()->get('whitelabelSetup')['whiteLabelBackgroundColor'] ?? ''); ?>);
+            --text-primary-color: hsl(<?php echo e(session()->get('whitelabelSetup')['whiteLabelTextColor'] ?? ''); ?>);
+        }
+    </style>
+
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
 <body class="font-sans antialiased">
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ND2J82J"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BSMP3K"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 @livewire('sideModal')
 @livewire('sideModal2')
+
+@livewire('component.modal-nivel1')
+@livewire('component.modal-nivel2')
+@livewire('component.modal-nivel3')
+@livewire('component.modal-nivel4')
+@livewire('component.modal-confirm')
+@livewire('component.modal-center')
 
 @if(Auth::check() && !request()->is('/'))
     <div class="w-full h-full flex flex-row border ">

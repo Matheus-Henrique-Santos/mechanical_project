@@ -1,3 +1,7 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Material+Icons+Round);
+@import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200);
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -79,12 +83,65 @@
     --tw-shadow-color: var(--user-primary-color);
     --tw-shadow: var(--tw-shadow-colored);
 }
+
 @media (min-width: 1024px){
 
     .mc-header-menu-dropdown{
         display: flex;
     }
 }
+
+@media (min-width: 1536px){
+
+    .md\:container{
+        max-width: 1536px;
+    }
+
+    .md\:mc-card{
+        width: 100%;
+        border-radius: 0.5rem;
+        --tw-bg-opacity: 1;
+        background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+        padding: 2.5rem;
+        --tw-shadow: 0px 0px 8px rgba(0,0,0,0.10);
+        --tw-shadow-colored: 0px 0px 8px var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    }
+    .md\:mc-card:is(.dark *){
+        --tw-bg-opacity: 1;
+        background-color: rgb(75 85 99 / var(--tw-bg-opacity, 1));
+    }
+}
+
+.mc-card{
+    width: 100%;
+    border-radius: 0.5rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+    padding: 2.5rem;
+    --tw-shadow: 0px 0px 8px rgba(0,0,0,0.10);
+    --tw-shadow-colored: 0px 0px 8px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.mc-card:is(.dark *){
+    --tw-bg-opacity: 1;
+    background-color: rgb(75 85 99 / var(--tw-bg-opacity, 1));
+}
+.mc-card-no-padding{
+    width: 100%;
+    border-radius: 0.5rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+    padding: 0px;
+    --tw-shadow: 0px 0px 8px rgba(0,0,0,0.10);
+    --tw-shadow-colored: 0px 0px 8px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.mc-card-no-padding:is(.dark *){
+    --tw-bg-opacity: 1;
+    background-color: rgb(75 85 99 / var(--tw-bg-opacity, 1));
+}
+
 .mc-header-menu-dropdown > nav{
     display: grid;
     width: 100%;

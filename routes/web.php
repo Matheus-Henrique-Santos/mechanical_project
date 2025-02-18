@@ -29,4 +29,6 @@ Route::domain('{account}.'.env('APP_URL'))->middleware('auth')->group(function (
     Route::view('/tenant-register', 'mechanical.auth.tenant-register')->name('tenant.register');
 });
 
+Route::view('usuario', 'mechanical.auth.register-user')->name('user.index');
+
 // require __DIR__.'/auth.php';
