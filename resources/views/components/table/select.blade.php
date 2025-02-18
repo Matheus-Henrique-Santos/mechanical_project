@@ -1,5 +1,5 @@
 <div class="relative w-[105px] md:w-14 ed-form-select">
-    <select {{$attributes->wire('model')}} class="ed-form-select-input dark:active:text-black peer">
+    <select {{$attributes->wire('model')}} class="mc-form-select-input dark:active:text-black peer">
         <option value="15" selected>15</option>
         <option value="30">30</option>
         <option value="60">60</option>
