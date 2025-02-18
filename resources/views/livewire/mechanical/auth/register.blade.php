@@ -70,7 +70,7 @@
 
                     <div class="text-black flex flex-col gap-0.5 w-full">
                         <p class="text-gray-700 text-[14px] font-medium">Cidade</p>
-                        <input type="text" name="city" placeholder="Cidade" wire:model="formData.city"
+                        <input type="text" disabled name="city" placeholder="Cidade" wire:model="formData.city"
                                class="border border-gray-300 bg-gray-200 outline-none p-2 pl-3 rounded focus:border-[#0084ff]">
                         @error('formData.city')
                         <span class="text-red-500 text-[12px]">{{ $message }}</span>
