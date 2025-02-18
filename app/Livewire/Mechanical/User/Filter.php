@@ -17,7 +17,7 @@ class Filter extends Component
 
     public function submit()
     {
-        $this->emit('filterUser', $this->state);
+        $this->dispatch('filterUser', $this->state);
     }
 
     public function clearFilter()

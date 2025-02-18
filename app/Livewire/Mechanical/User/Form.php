@@ -61,7 +61,7 @@ class Form extends Component
             $this->openToast('Usuário',$userUpdateReturn['message'], 'danger');
         } else if ($userUpdateReturn['status'] != 'error') {
             $this->openToast('Usuário',$userUpdateReturn['message']);
-            $this->emit('refreshTableUser');
+            $this->dispatch('refreshTableUser');
 
         }
         $this->closeModal();
@@ -82,7 +82,7 @@ class Form extends Component
             $this->openToast('Usuário',$userCreateReturn['message'], 'danger');
         } else if ($userCreateReturn['status'] != 'error') {
             $this->openToast('Usuário',$userCreateReturn['message']);
-            $this->emit('refreshTableUser');
+            $this->dispatch('refreshTableUser');
         }
 
         $this->closeModal();

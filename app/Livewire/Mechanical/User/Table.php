@@ -17,7 +17,7 @@ class Table extends Component
     protected $listeners = [
         'refreshTableUser' => '$refresh',
         'confirmDeleteUser' => 'delete',
-        'orderTableUser',
+        'order-table-user' => 'orderTableUser',
         'filterUser'
     ];
 
@@ -37,6 +37,7 @@ class Table extends Component
 
     public function orderTableUser($column)
     {
+        dd('aqui');
         if (is_null($this->order['order'])) {
             $this->order['order'] = 'ASC';
         }

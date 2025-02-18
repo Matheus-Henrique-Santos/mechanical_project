@@ -2,16 +2,16 @@
     <x-table>
         <thead>
             <tr x-data="{order:@entangle('order')}">
-                <th @click="$wire.emit('orderTableUser','name')">
+                <th>
                     <x-table.column class="justify-start" column="name">Nome</x-table.column>
                 </th>
-                <th @click="$wire.emit('orderTableUser','email')">
+                <th>
                     <x-table.column class="justify-start" column="email">E-mail</x-table.column>
                 </th>
-                <th @click="$wire.emit('orderTableUser','role_id')">
+                <th>
                     <x-table.column class="justify-center" column="role_id">Nível de acesso</x-table.column>
                 </th>
-                <th @click="$wire.emit('orderTableUser','status')">
+                <th>
                     <x-table.column class="justify-center" column="status">Status</x-table.column>
                 </th>
                 <th class="w-2/12">

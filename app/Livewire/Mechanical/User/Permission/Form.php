@@ -61,7 +61,7 @@ class Form extends Component
             $this->openToast('Permissões',$userPermissionsReturn['message'], 'danger');
         } else if ($userPermissionsReturn['status'] != 'error') {
             $this->openToast('Permissões',$userPermissionsReturn['message']);
-            $this->emit('refreshTableUser');
+            $this->dispatch('refreshTableUser');
         }
 
         $this->closeModal();
