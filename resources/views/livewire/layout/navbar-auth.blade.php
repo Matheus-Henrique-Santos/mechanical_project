@@ -37,22 +37,21 @@
                                 </div>
                             </button>
                         </x-slot>
-
                         <x-slot name="content">
-                            <x-dropdown-link :href="route('profile.edit')">
+                            <x-dropdown-link :href="route('profile.edit', ['account' => auth()->user()->tenant->id])">
                                 {{ __('Profile') }}
                             </x-dropdown-link>
 
                             <!-- Authentication -->
-                            <form method="GET" action="{{ route('logout') }}">
-                                @csrf
+{{--                            <form method="GET" action="{{ route('logout', ['account' => auth()->user()->tenant->id]) }}">--}}
+{{--                                @csrf--}}
 
-                                <x-dropdown-link :href="route('logout')"
-                                                 onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                    {{ __('Log Out') }}
-                                </x-dropdown-link>
-                            </form>
+{{--                                <x-dropdown-link :href="route('logout', ['account' => auth()->user()->tenant->id])"--}}
+{{--                                                 onclick="event.preventDefault();--}}
+{{--                                                this.closest('form').submit();">--}}
+{{--                                    {{ __('Log Out') }}--}}
+{{--                                </x-dropdown-link>--}}
+{{--                            </form>--}}
                         </x-slot>
                     </x-dropdown>
                 </div>
@@ -126,7 +125,8 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="{{ route('logout') }}"
+{{--                    <a href="{{ route('logout', ['account' => auth()->user()->tenant->id]) }}"--}}
+                    <a
                        class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 group">
                         <svg
                             class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"

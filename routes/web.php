@@ -22,7 +22,7 @@ Route::middleware('web')->get('/google/callback', [AuthProvidersController::clas
 //    Route::view('/dashboard','mechanical.dashboard')->name('dashboard');
 //});
 
-Route::domain('{account}.'.env('APP_URL'))->middleware([\App\Http\Middleware\SubdomainAuth::class, 'auth'])->group(function () {
+Route::domain('{account}.'.env('APP_URL'))->middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

@@ -17,20 +17,20 @@ class SubdomainAuth
     public function handle(Request $request, Closure $next)
     {
         // Obtém o subdomínio da URL (caso haja)
-        $subdomain = explode('.', $request->getHost())[0];
-        // Verifica se o subdomínio existe no banco de dados
-        if ($subdomain) {
-            $user = User::where('subdomain', $subdomain)->first();
-
-            if (!$user) {
-                // Se o subdomínio não existir no banco, redireciona para a página de login
-                return redirect()->route('login')->withErrors(['subdomain' => 'Subdomínio não encontrado']);
-            }
-
-            // Se o subdomínio for válido, faz login automaticamente
-            auth()->login($user);
-        }
-
-        return $next($request);
+//        $subdomain = explode('.', $request->getHost())[0];
+//        // Verifica se o subdomínio existe no banco de dados
+//        if ($subdomain) {
+//            $user = User::query()->with('tenant')->whereRelation('tenant','subdomain', $subdomain)->first();
+//
+//            if (!$user) {
+//                // Se o subdomínio não existir no banco, redireciona para a página de login
+//                return redirect()->route('login')->withErrors(['subdomain' => 'Subdomínio não encontrado']);
+//            }
+//
+//            // Se o subdomínio for válido, faz login automaticamente
+//            auth()->login($user);
+//        }
+//
+//        return $next($request);
     }
 }
