@@ -7,7 +7,6 @@ use Livewire\Component;
 
 class TenantRegister extends Component
 {
-
     public $name;
     public $email;
     public $address;

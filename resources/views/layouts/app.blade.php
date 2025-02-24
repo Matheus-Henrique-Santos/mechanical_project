@@ -39,7 +39,7 @@
     @livewire('sideModal2')
 
 @if(Auth::check() && !request()->is('/', 'login', 'register'))
-    <div class="w-full h-full flex flex-row border ">
+    <div class="w-full h-full">
         <x-navbar-auth>
             <main>
                 {{ $slot }}
@@ -55,19 +55,19 @@
     </div>
 @endif
 
-@yield('modal')
+{{--@yield('modal')--}}
 
 @livewireScripts
 {{--@livewire('component.modal-help')--}}
-@livewire('component.modal-nivel1')
+{{--@livewire('component.modal-nivel1')--}}
 {{--@livewire('component.modal-nivel2')--}}
 {{--@livewire('component.modal-nivel3')--}}
 {{--@livewire('component.modal-nivel4')--}}
 {{--@livewire('component.modal-center')--}}
-<script>
-    Livewire.onPageExpired((response, message) => console.log('off'))
-</script>
-@stack('scripts')
+{{--<script>--}}
+{{--    Livewire.onPageExpired((response, message) => console.log('off'))--}}
+{{--</script>--}}
+{{--@stack('scripts')--}}
 
 <script>
     window.addEventListener('load', function () {

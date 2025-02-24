@@ -1,5 +1,5 @@
 <div class="flex flex-col justify-center items-center mt-14">
-    <div class="w-[700px] p-4 py-6 shadow-lg rounded-2xl border border-black">
+    <div class="w-[600px] p-4 py-6">
         <div class="flex justify-center text-center h-20">
             <figure class="w-full h-10 flex items-center justify-center">
 {{--                <img class="object-contain max-w-full max-h-full" id="logo" src="" alt="">--}}
@@ -15,7 +15,7 @@
 
         <form method="POST" wire:submit.prevent="save" class="flex flex-col gap-4">
             @csrf
-            <div class="flex flex-col gap-5 w-full">
+            <div class="flex flex-col gap-3 w-full">
                 <div class="flex flex-row gap-4">
                     <div class="text-black flex flex-col gap-0.5 w-full">
                         <x-input wire:model="name" error="name" label="Nome completo do responsavel"/>
@@ -48,14 +48,14 @@
                     </div>
                 </div>
 
-                <div>
+                <div class="relative">
                     <button type="submit"
                             class="bg-[#043873] w-full font-bold text-white rounded-[5px] py-2 transition-all duration-200 active:scale-[0.99] flex flex-row justify-center">
                         <span>Enviar dados para Análise</span>
                     </button>
                     <div wire:loading wire:target="save" class="absolute top-0 left-0 w-full h-full z-10">
                         <div class="w-full h-full rounded-md flex items-center justify-center bg-white/70">
-                            <x-heroicon-s-arrow-path class="text-[#20392f] w-5 h-5 animate-spin"/>
+                            <x-heroicon-s-arrow-path class="text-[#043873] w-5 h-5 animate-spin"/>
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
 
         </form>
 
-        <div class="flex flex-col gap-3 mt-8">
+        <div class="flex flex-col gap-3 mt-5">
             <div class="flex flex-row justify-center text-[15px]">
                 <p class="text-gray-700 font-medium ">
                     Já possuí uma conta? <span class="text-[#0084ff] font-medium cursor-pointer hover:underline"

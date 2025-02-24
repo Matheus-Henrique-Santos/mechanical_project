@@ -28,9 +28,9 @@ $successClass = 'mc-form-text peer disabled:text-gray-500';
                     {{ $attributes->merge(['class' => $successClass]) }}
                 @enderror
             />
-        <span class="mc-form-label-basic">{{ $label }}</span>
+        <span class="mc-form-label-basic text-sm">{{ $label }}</span>
         @error($error)
-            <small class="mc-form-error pl-2">{{ $message }}</small>
+            <small class="mc-form-error pl-2 text-sm">{{ $message }}</small>
         @enderror
     </label>
 </div>

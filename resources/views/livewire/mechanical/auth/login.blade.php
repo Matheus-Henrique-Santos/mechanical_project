@@ -53,10 +53,17 @@
                 </div>
             </div>
 
-            <button type="submit"
-                    class="bg-[#043873] w-full font-bold text-white rounded-[5px] py-2 transition-all duration-200
+            <div class="relative">
+                <button type="submit"
+                        class="bg-[#043873] w-full font-bold text-white rounded-[5px] py-2 transition-all duration-200
                     active:scale-[0.99]">Entrar
-            </button>
+                </button>
+                <div wire:loading wire:target="login" class="absolute top-0 left-0 w-full h-full z-10">
+                    <div class="w-full h-full rounded-md flex items-center justify-center bg-white/70">
+                        <x-heroicon-s-arrow-path class="text-[#043873] w-5 h-5 animate-spin"/>
+                    </div>
+                </div>
+            </div>
         </form>
 
         <div class="flex flex-col gap-3 mt-5">
