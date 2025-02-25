@@ -29,7 +29,7 @@
                     {{$itemUser['email']}}
                 </td>
                 <td class="text-center">
-                    {{$itemUser->getRoleNames()->join(', ', ' e ') ?? 'Sem Função Atribuida'}}
+                    {{ 'Sem Função Atribuida'}}
                 </td>
                 <td>
                     <div class="flex gap-x-2 justify-center text-center">
