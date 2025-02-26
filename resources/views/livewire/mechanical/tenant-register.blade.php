@@ -9,48 +9,47 @@
 
     <form wire:submit.prevent="register">
         <div class="mb-4">
-            <label for="name" class="block text-sm font-medium text-gray-700">Nome da Empresa</label>
-            <input type="text" id="name" wire:model="name" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
-            @error('name') <span class="text-red-600 text-sm">{{ $message }}</span> @enderror
+            <div class="md:col-span-4">
+                <x-input wire:model.defer="name" label="Nome" />
+            </div>
         </div>
 
         <div class="mb-4">
-            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-            <input type="email" id="email" wire:model="email" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
-            @error('email') <span class="text-red-600 text-sm">{{ $message }}</span> @enderror
+            <div class="md:col-span-4">
+                <x-input wire:model.defer="email" label="Email" />
+            </div>
         </div>
 
         <div class="mb-4">
-            <label for="address" class="block text-sm font-medium text-gray-700">Endereço</label>
-            <input type="text" id="address" wire:model="address" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
-            @error('address') <span class="text-red-600 text-sm">{{ $message }}</span> @enderror
+            <div class="md:col-span-4">
+                <x-input wire:model.defer="address" label="Endereço" />
+            </div>
+        </div>
+
+{{--        <div class="mb-4">--}}
+{{--            <x-select wire:model="type" error="uf" label="Tipo">--}}
+{{--                <option value="pf">Pessoa Física</option>--}}
+{{--                <option value="pj">Pessoa Jurídica</option>--}}
+{{--            </x-select>--}}
+{{--            @error('type') <span class="text-red-600 text-sm">{{ $message }}</span> @enderror--}}
+{{--        </div>--}}
+
+        <div class="mb-4">
+            <div class="md:col-span-4">
+                <x-input wire:model.defer="document" label="CNPJ" />
+            </div>
         </div>
 
         <div class="mb-4">
-            <label for="type" class="block text-sm font-medium text-gray-700">Tipo de Pessoa</label>
-            <select id="type" wire:model="type" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
-                <option value="pf">Pessoa Física</option>
-                <option value="pj">Pessoa Jurídica</option>
-            </select>
-            @error('type') <span class="text-red-600 text-sm">{{ $message }}</span> @enderror
+            <div class="md:col-span-4">
+                <x-input wire:model.defer="phone" label="Telefone" />
+            </div>
         </div>
 
         <div class="mb-4">
-            <label for="document" class="block text-sm font-medium text-gray-700">CPF ou CNPJ</label>
-            <input type="text" id="document" wire:model="document" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
-            @error('document') <span class="text-red-600 text-sm">{{ $message }}</span> @enderror
-        </div>
-
-        <div class="mb-4">
-            <label for="phone" class="block text-sm font-medium text-gray-700">Telefone</label>
-            <input type="text" id="phone" wire:model="phone" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
-            @error('phone') <span class="text-red-600 text-sm">{{ $message }}</span> @enderror
-        </div>
-
-        <div class="mb-4">
-            <label for="subdomain" class="block text-sm font-medium text-gray-700">Subdomínio</label>
-            <input type="text" id="subdomain" wire:model="subdomain" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
-            @error('subdomain') <span class="text-red-600 text-sm">{{ $message }}</span> @enderror
+            <div class="md:col-span-4">
+                <x-input wire:model.defer="subdomain" label="Subdomínio" />
+            </div>
         </div>
 
         <div class="mb-4">
