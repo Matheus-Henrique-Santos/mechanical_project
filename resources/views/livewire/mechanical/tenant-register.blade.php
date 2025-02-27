@@ -10,19 +10,19 @@
     <form wire:submit.prevent="register">
         <div class="mb-4">
             <div class="md:col-span-4">
-                <x-input wire:model.defer="name" label="Nome" />
+                <x-input wire:model.defer="name" error="name" label="Nome" />
             </div>
         </div>
 
         <div class="mb-4">
             <div class="md:col-span-4">
-                <x-input wire:model.defer="email" label="Email" />
+                <x-input wire:model.defer="email" error="email" label="Email" />
             </div>
         </div>
 
         <div class="mb-4">
             <div class="md:col-span-4">
-                <x-input wire:model.defer="address" label="Endereço" />
+                <x-input wire:model.defer="address" error="address" label="Endereço" />
             </div>
         </div>
 
@@ -36,19 +36,19 @@
 
         <div class="mb-4">
             <div class="md:col-span-4">
-                <x-input wire:model.defer="document" label="CNPJ" />
+                <x-input wire:model.defer="document" error="document" label="CNPJ" />
             </div>
         </div>
 
         <div class="mb-4">
             <div class="md:col-span-4">
-                <x-input wire:model.defer="phone" label="Telefone" />
+                <x-input wire:model.defer="phone" error="phone" label="Telefone" />
             </div>
         </div>
 
         <div class="mb-4">
             <div class="md:col-span-4">
-                <x-input wire:model.defer="subdomain" label="Subdomínio" />
+                <x-input wire:model.defer="subdomain" error="subdomain" label="Subdomínio" />
             </div>
         </div>
 
