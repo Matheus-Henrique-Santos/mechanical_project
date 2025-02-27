@@ -2,24 +2,19 @@
 
 namespace App\Livewire\Component;
 
-use App\Traits\Livewire\WithModal;
 use Livewire\Component;
 
 class Button extends Component
 {
-    use WithModal;
+    public $text, $component, $level, $params, $classList;
 
-    public $text;
-    public $icon;
-    public $component;
-    public $level = 1;
-
-    public function mount($text, $icon = null, $component, $level = 1)
+    public function mount($text = '', $component = '', $level = '', $params = '', $classList = '')
     {
         $this->text = $text;
-        $this->icon = $icon;
         $this->component = $component;
         $this->level = $level;
+        $this->params =  $params;
+        $this->classList = $classList;
     }
 
     public function render()

@@ -11,7 +11,7 @@
     $classIconPadding = $size !== 'lg' ? 'pl-2 pr-1.5' : '';
     $classIcon = $icon ? "mc-button-{$size}-icon" : '';
 
-    $class = "mc-button-{$outline}-{$color} mc-button-{$size} mc-button-{$size}-text {$classIcon} {$classIconPadding} disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed"
+    $class = "mc-button-{$outline}-{$color} mc-button-{$size} mc-button-{$size}-text {$classIcon} {$classIconPadding}  disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed"
 @endphp
 
 <button  {{$attributes->merge(['class' => $class])}}>

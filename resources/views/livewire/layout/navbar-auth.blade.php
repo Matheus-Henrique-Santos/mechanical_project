@@ -1,5 +1,5 @@
 <div>
-    <nav class="fixed top-0 z-50 w-full bg-blue-black">
+    <nav class="fixed top-0 z-10 w-full bg-blue-black">
         <div class="px-3 py-3 lg:px-5 lg:pl-3">
             <div class="flex items-center justify-between">
                 <div class="flex items-center justify-start rtl:justify-end">
@@ -53,12 +53,14 @@
     </nav>
 
     {{--MENU LATERAL --}}
-    <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-blue-black border-r sm:translate-x-0" >
+    <aside id="logo-sidebar"
+           class="fixed top-0 left-0  w-64 h-screen pt-20 transition-transform -translate-x-full bg-blue-black border-r sm:translate-x-0">
         <div class="h-full px-3 pb-4 overflow-y-auto bg-blue-black">
 
             <ul class="space-y-2 font-medium">
                 <li>
-                    <a href="{{ route('dashboard') }}" class="flex items-center p-2 text-white rounded-lg hover:bg-gray-400">
+                    <a href="{{ route('dashboard') }}"
+                       class="flex items-center p-2 text-white rounded-lg hover:bg-gray-400">
                         <span class="flex-1 ms-3 whitespace-nowrap">Dashboard</span>
                     </a>
                 </li>
@@ -109,17 +111,20 @@
                 </li>
 
                 <li>
-                    <a href="{{ route('tenant.register') }}" class="flex items-center p-2 text-white rounded-lg hover:bg-gray-400">
+                    <a href="{{ route('tenant.register') }}"
+                       class="flex items-center p-2 text-white rounded-lg hover:bg-gray-400">
                         <span class="flex-1 ms-3 whitespace-nowrap">Parceiros / Tenants</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('users') }}" class="flex items-center p-2 text-white rounded-lg hover:bg-gray-400">
+                    <a href="{{ route('users') }}"
+                       class="flex items-center p-2 text-white rounded-lg hover:bg-gray-400">
                         <span class="flex-1 ms-3 whitespace-nowrap">Usuários</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('roles') }}" class="flex items-center p-2 text-white rounded-lg hover:bg-gray-400">
+                    <a href="{{ route('roles') }}"
+                       class="flex items-center p-2 text-white rounded-lg hover:bg-gray-400">
                         <span class="flex-1 ms-3 whitespace-nowrap">Permissões</span>
                     </a>
                 </li>

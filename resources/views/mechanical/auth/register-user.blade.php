@@ -3,7 +3,7 @@
         <h1 class="mc-title-external">
             Usuários
         </h1>
-        <livewire:component.button text="Cadastrar" icon="add" component="mechanical.user.form"/>
+        <livewire:component.button text="Criar Usuário" component="mechanical.user.form" class-list="w-full md:w-32 text-center cursor-pointer block px-2 py-1 text-xs bg-blue-black text-white rounded hover:bg-opacity-50 font-bold active:scale-[0.99]"/>
     </div>
     <div class="mc-card">
         <livewire:mechanical.user.filter />
