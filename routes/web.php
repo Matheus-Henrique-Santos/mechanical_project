@@ -30,6 +30,30 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::view('inventory', 'mechanical.inventory-management')->name('inventory.index');
+    Route::view('inventory/batches', 'mechanical.inventory-management')->name('inventory.batches');
+    Route::view('inventory/edit/{product}', 'mechanical.inventory-management')->name('inventory.edit');
+
+// Gerenciamento de Orçamentos
+    Route::view('quotes', 'mechanical.quote-management')->name('quotes.index');
+    Route::view('quotes/create', 'mechanical.quote-management')->name('quotes.create');
+    Route::view('quotes/{quote}', 'mechanical.quote-management')->name('quotes.show');
+
+// Mensagens
+    Route::view('messages', 'mechanical.messaging')->name('messages.index');
+
+// Localizador (Mapas)
+    Route::view('locations', 'mechanical.location-finder')->name('locations.index');
+
+// Relatórios
+    Route::view('reports', 'mechanical.reporting')->name('reports.index');
+
+// Agendamentos
+    Route::view('appointments', 'mechanical.appointment-management')->name('appointments.index');
+    Route::view('appointments/create', 'mechanical.appointment-management')->name('appointments.create');
+    Route::view('appointments/{appointment}', 'mechanical.appointment-management')->name('appointments.show');
+
 });
 
 

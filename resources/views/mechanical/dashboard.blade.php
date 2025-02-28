@@ -1,5 +1,3 @@
 <x-app-layout>
-
-        <h1>esta logado</h1>
-
+    <livewire:mechanical.dashboard/>
 </x-app-layout>
