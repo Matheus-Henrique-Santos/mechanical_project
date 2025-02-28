@@ -1,6 +1,6 @@
 <div>
-    <form class="mc-card" wire:submit.prevent="save">
-        <h1 class="text-lg font-medium absolute top-2 left-8">
+    <form wire:submit.prevent="save">
+        <h1 class="text-lg font-medium">
             {{$response->user ? 'Editar Usuário' : 'Cadastrar novo usuário'}}
         </h1>
         <div class="md:col-span-12">
@@ -43,7 +43,7 @@
 {{--                </div>--}}
 {{--            @endif--}}
             <div class="md:col-span-12">
-                <x-button size="md">{{$response->user ? 'Salvar' : 'Cadastrar'}}</x-button>
+                <x-button size="md" color="muted">{{$response->user ? 'Salvar' : 'Cadastrar'}}</x-button>
             </div>
         </div>
     </form>
