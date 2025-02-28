@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('product_batches', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('product_id')->constrained();
+            $table->string('batch_number');
+            $table->integer('quantity');
+            $table->date('expiry_date')->nullable();
+            $table->decimal('purchase_price', 10, 2)->nullable();
+            $table->decimal('selling_price', 10, 2);
             $table->timestamps();
         });
     }
