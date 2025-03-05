@@ -142,7 +142,6 @@
                                         <option value="90">1.5 hours</option>
                                         <option value="120">2 hours</option>
                                         <option value="180">3 hours</option>
-                                        <option value="240">4 hours</option>
                                     </select>
                                     @error('duration') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                                 </div>
