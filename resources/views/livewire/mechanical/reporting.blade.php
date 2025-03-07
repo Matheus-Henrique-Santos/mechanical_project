@@ -18,6 +18,7 @@
                                     <option value="revenue_analysis">Revenue Analysis</option>
                                     <option value="product_performance">Product Performance</option>
                                     <option value="client_analytics">Client Analytics</option>
+
                                     @if(Auth::user()->role === 'store')
                                         <option value="inventory_turnover">Inventory Turnover</option>
                                     @endif
