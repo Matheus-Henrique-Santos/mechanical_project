@@ -12,13 +12,11 @@
                                 <select
                                     wire:model="reportType"
                                     id="reportType"
-                                    class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                                >
+                                    class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                                     <option value="quote_summary">Quote Summary</option>
                                     <option value="revenue_analysis">Revenue Analysis</option>
                                     <option value="product_performance">Product Performance</option>
                                     <option value="client_analytics">Client Analytics</option>
-
                                     @if(Auth::user()->role === 'store')
                                         <option value="inventory_turnover">Inventory Turnover</option>
                                     @endif
