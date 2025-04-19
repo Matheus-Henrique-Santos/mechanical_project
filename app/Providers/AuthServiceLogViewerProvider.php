@@ -22,7 +22,7 @@ class AuthServiceLogViewerProvider extends ServiceProvider
     {
         $this->registerPolicies();
 //        Gate::define('viewLogViewer', function (?User $user) {
-//            return $user && ($user->email == 'edsonteles343@gmail.com');
+//            return $user && ($user->email == 'email@email');
 //        });
     }
 }

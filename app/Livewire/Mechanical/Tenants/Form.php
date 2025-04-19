@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Livewire\Mechanical;
+namespace App\Livewire\Mechanical\Tenants;
 
 use App\Models\Tenant;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
-class TenantRegister extends Component
+class Form extends Component
 {
     public $name;
     public $email;

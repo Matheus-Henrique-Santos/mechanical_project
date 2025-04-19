@@ -24,7 +24,7 @@ Route::view('/reset-password/{token}', 'mechanical.auth.reset-password')->name('
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('dashboard', 'mechanical.dashboard')->name('dashboard');
     Route::view('usuario', 'mechanical.auth.register-user')->name('users');
-    Route::view('tenant-register', 'mechanical.auth.tenant-register')->name('tenant.register');
+    Route::view('tenants', 'mechanical.tenants.tenants')->name('tenants');
     Route::view('permissoes', 'mechanical.roles')->name('roles');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -55,7 +55,3 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('appointments/{appointment}', 'mechanical.appointment-management')->name('appointments.show');
 
 });
-
-
-
-
