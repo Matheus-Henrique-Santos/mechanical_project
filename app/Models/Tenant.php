@@ -2,34 +2,46 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Stancl\Tenancy\Database\Concerns\HasDatabase;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Stancl\Tenancy\Database\Models\Tenant as BaseTenant;
 use Stancl\Tenancy\Database\Concerns\HasDomains;
-use Illuminate\Contracts\Auth\Authenticatable;
-use Illuminate\Auth\Authenticatable as AuthenticatableTrait;
+use Stancl\Tenancy\Database\Models\Domain;
 
-class Tenant extends Model implements Authenticatable
+class Tenant extends BaseTenant
 {
-    use AuthenticatableTrait;
-    use HasFactory;
-    use HasDatabase;
     use HasDomains;
 
     protected $fillable = [
-        'id',
         'main_user_id',
-        'subdomain',
         'name',
-        'cellphone',
-        'cnpj',
-        'logo_path',
+        'documents',
         'zip_code',
-        'street',
-        'neighborhood',
+        'address',
         'city',
-        'uf',
+        'neighborhood',
         'number',
-        'complement',
+        'uf',
+        'data',
     ];
+
+    public static function getCustomColumns(): array
+    {
+        return [
+            'id',
+            'main_user_id',
+            'name',
+            'documents',
+            'zip_code',
+            'address',
+            'city',
+            'neighborhood',
+            'number',
+            'uf',
+        ];
+    }
+
+    public function domain(): HasOne
+    {
+        return $this->hasOne(Domain::class, 'tenant_id', 'id');
+    }
 }

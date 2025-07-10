@@ -16,10 +16,10 @@ class CreateTenantsTable extends Migration
     public function up(): void
     {
         Schema::create('tenants', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('main_user_id')->constrained('users');
-            $table->string('subdomain')->unique();
+            $table->string('id')->primary();
 
+            // your custom columns may go here
+            $table->foreignId('main_user_id')->nullable()->constrained('users')->onDelete('cascade')->onUpdate('cascade');
             $table->string('name')->nullable();
             $table->string('cellphone')->nullable();
             $table->string('cnpj', 20)->nullable();
@@ -31,7 +31,13 @@ class CreateTenantsTable extends Migration
             $table->string('neighborhood')->nullable();
             $table->string('complement')->nullable();
             $table->string('uf', 2)->nullable();
+
             $table->timestamps();
+            $table->json('data')->nullable();
+        });
+
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreignUuid('tenant_id')->after('remember_token')->nullable()->constrained('tenants');
         });
     }
 

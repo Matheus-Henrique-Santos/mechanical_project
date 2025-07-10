@@ -20,7 +20,7 @@
         "opcodesio/log-viewer": "^3.14",
         "owen-it/laravel-auditing": "^13.6",
         "spatie/laravel-permission": "^6.15",
-        "stancl/tenancy": "^3.8"
+        "stancl/tenancy": "^3.9"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.14",
